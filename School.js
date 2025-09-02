@@ -2,14 +2,13 @@ console.log("i WANT TO SLEEP");
 
 
 rl = require('readline')
-rli = rl.createInterFace(
+rli = rl.createInterface(
 {
 input: process.stdin, 
 }
 
 )
-rli.on('line', give_station =>
-{
+rli.on('line', give_station)
 
 function give_station(num) {
     switch (Number(num)) {
@@ -36,6 +35,5 @@ function give_station(num) {
 
 
 }
-})
 
 

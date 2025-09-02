@@ -3,20 +3,21 @@
 
 <p> The restaurant price is: </p>
 
-<input id="mealprice" type="number" placeholder="Meal Price"> <br>
+<input id="mealprice" type="number" placeholder="meal Price"> <br>
 <input id="tip" type="number" placeholder="Tip "> <br>
-<input id="service_charge" type="number" placeholder="Service Charge (%)"> <br>
+<input id="service_charge" type="number" placeholder="service Charge (%)"> <br>
 
-<button onclick="calculateTotal()">CalculateTotal</button>
+<button onclick="CalculateTotal()">CalculateTotal</button>
 
-<div id="Total Price"></div>
+<div id="Total_Price"></div>
 
 <script>
-function Restaurantprice() {
-mealprice = Number(MealPrice.value);
-tip = Number(tip.value);
-service_charge = Number(service_charge.value);
-
+function CalculateTotal() {
+mealprice = Number(document.getElementById("mealprice").value);
+tip = Number(document.getElementById("tip").value);
+service_charge = Number(document.getElementById("service_charge").value)
+total = mealprice + tip + (mealprice * service_charge / 100);
+document.getElementById("Total_Price").innerHTML = "Total Amount: PHP" + total;
 }
 
 
