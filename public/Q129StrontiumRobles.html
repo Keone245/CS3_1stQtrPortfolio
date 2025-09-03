@@ -19,28 +19,32 @@
                class="guessSubmit" 
                id="submitguess">
     </div>
+    <div id="result"></div>
    <!-- Enter your HTML tags below  but before the opening script tag -->
 
     <script>
 
        var dNumber = Math.floor(Math.random() * 100) + 1; // generates a number from 1  to 100 when the page loads
-
-        function checkIt() {
         let guess = 1;
+        function checkIt() {
+        
 
         let x = document.getElementById("guessfield").value;
         if (x < 1 || x > 100) {
-            alert("Your guess is out of range. Please enter a number between 1 and 100.");
+            document.getElementById("result").innerHTML = "Your guess not included for range. Please enter a number between 1 and 100." 
         } else if (x < dNumber) {
-            alert("Your guess is too low. Try again.");
+            document.getElementById("result").innerHTML = "Your guess is too low. Try again.";
         } else if (x > dNumber) {
-            alert("Your guess is too high. Try again.");
+            guess++;
+            document.getElementById("result").innerHTML = "Your guess is too high. Try again.";
+            guess++;
         } else {
-            alert("Congratulations! You guessed the number " + dNumber + " correctly!");    
+            document.getElementById("result").innerHTML = "Congratulations! You guessed the number " + dNumber + " correctly! with " + guess + " guesses!!";    
          
 
         }
     }
+    document.getElementById("submitguess").addEventListener("click", checkIt);
     </script>
 
 </body>
