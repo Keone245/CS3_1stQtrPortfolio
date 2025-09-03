@@ -30,12 +30,13 @@
         
 
         let x = document.getElementById("guessfield").value;
+        x = parseInt(x);
         if (x < 1 || x > 100) {
             document.getElementById("result").innerHTML = "Your guess not included for range. Please enter a number between 1 and 100." 
         } else if (x < dNumber) {
             document.getElementById("result").innerHTML = "Your guess is too low. Try again.";
-        } else if (x > dNumber) {
             guess++;
+        } else if (x > dNumber) {
             document.getElementById("result").innerHTML = "Your guess is too high. Try again.";
             guess++;
         } else {
