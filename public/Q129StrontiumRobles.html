@@ -30,7 +30,7 @@
         
 
         let x = document.getElementById("guessfield").value;
-        x = parseInt(x);
+        
         if (x < 1 || x > 100) {
             document.getElementById("result").innerHTML = "Your guess not included for range. Please enter a number between 1 and 100." 
         } else if (x < dNumber) {
