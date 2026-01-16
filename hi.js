@@ -6,8 +6,10 @@ let input = data.toString().trim();
  let pFound = showProducts(obj, input); // complete this function wherein it should console out all product objects in (obj) under the Manufacturer's Name in (input)
  // test pFound and give appropriate message
  
-
- process.exit()
+ if (!pFound) {
+     console.log(`No products found for manufacturer '${input}'.`);
+ }
+ 
 
 });
 
@@ -42,7 +44,11 @@ function createProperties(pInfo) {
     for (let i=0; i < pInfo.length; i+=6) {
         obj[pInfo[i]] = { // this represents the productid.
               // create the properties here for each productid...refer to the list below under createArray      
-
+            pName: pInfo[i+1],
+            pCat: pInfo[i+2],
+            pMan: pInfo[i+3],
+            pPrice: pInfo[i+4],
+            pQty: pInfo[i+5]
 
          };
     }
@@ -62,6 +68,10 @@ function showProducts (obj, input) {
   let retValue = false;
   for (let key in obj) {
        // fill-in the required line codes to get products under a Manufacturer name in (input) from the object (obj)
+       if (obj[key].pMan && obj[key].pMan.toLowerCase() === input.toLowerCase()) {
+           products[key] = obj[key];
+           retValue = true;
+       }
   }
 
 

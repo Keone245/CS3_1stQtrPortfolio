@@ -1,0 +1,57 @@
+<form method="post" action="submit">
+  <label>
+    Student ID:
+    <input type="number" required>
+  </label><br>
+  <label>
+    Full Name:
+    <input type="text" required>
+  </label><br>
+  <label>
+    Birthday:
+    <input type="date" required>
+  </label><br>
+  <label>
+    Email Address:
+    <input type="email" required>
+  </label><br>
+  <label>
+    Mobile Phone:
+    <input type="text" required>
+  </label><br>
+  <label>
+    Grade Level:
+    <select name="grade_level" required>
+      <option value="" disabled selected>Select your grade level</option>
+      <option value="Preschool">Preschool</option>
+      <option value="Elementary">Elementary School</option>
+      <option value="HighSchool">High School</option>
+      <option value="College">College</option>
+    </select>
+  </label><br>
+  <label>
+    <input type="radio" name="status" value="Intern" required>
+    Intern
+  </label><br>
+  <label>
+    <input type="radio" name="status" value="Extern">
+    Extern
+  </label><br>
+  <label>
+    Preferred Organization:
+    <select name="preferred_organization" required>
+      <option value="" disabled selected>Select your preferred organization</option>
+      <option value="Polvere">Polvere</option>
+      <option value="Celluloid">Celluloid</option>
+      <option value="Likha">Likha</option>
+      <option value="HimigAgham">Himig Agham</option>
+      <option value="SARS">SARS</option>
+    </select>
+  </label><br>
+  <label>
+    Why do you want to join?
+    <textarea required></textarea>
+  </label><br>
+  <button type="submit">Submit</button>
+  <button type="reset">Cancel</button>
+</form>
